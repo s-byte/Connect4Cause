@@ -1,0 +1,172 @@
+.header {
+  font-family: 'Barriecito';
+  margin-top: 50px;
+  font-size: 100px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.pic {
+  margin-top: 50px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 500px;
+  height: 400px;
+  margin-left: 150px;
+  margin-right: 10px;
+  float: left;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  width: 500px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: YellowGreen;
+  margin-left: 150px;
+  margin-right: 900px;
+}
+
+.container:hover .overlay {
+  opacity: 0.8;
+}
+
+.text {
+  color: DarkGreen;
+  font-size: 30px;
+  font-family: 'Barriecito';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.image1 {
+  display: block;
+  width: 600px;
+  height: 400px;
+  margin-right: 100px;
+  margin-left: 10px;
+  float: right;
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  width: 600px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: YellowGreen;
+  margin-left: 803px;
+  float: right;
+}
+
+.container:hover .overlay1 {
+  opacity: 0.8;
+}
+
+ul{
+  float:right;
+  list-style-type: none;
+  margin-top: 25px;
+  padding: 30px;
+  background: YellowGreen;
+}
+
+ul li{
+display: inline-block;
+}
+
+ul li a{
+  text-decoration: none;
+  color: #000000;
+  padding:7px 25px;
+  border: 1px solid #fff;
+  transition: 0.5s ease;
+  background-color: #CFDAD0;
+}
+
+ul li a:hover{
+  background-color:#fff;
+  color: #000000
+}
+
+ul li a:active{
+  background-color:#fff;
+  color: #000000
+}
+
+.logo img{
+  margin-top: 15px;
+  float: left;
+  width:150px;
+  height: auto;
+  padding: 30px;
+  background: YellowGreen;
+}
+
+.image2 {
+  display: block;
+  width: 600px;
+  height: 400px;
+  margin-right: 100px;
+  margin-left: 10px;
+  float: right;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  width: 600px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: YellowGreen;
+  margin-left: 803px;
+  float: right;
+}
+
+.image3 {
+  display: block;
+  width: 600px;
+  height: 400px;
+  margin-right: 100px;
+  margin-left: 10px;
+  float: right;
+}
+
+.overlay3 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  width: 600px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: YellowGreen;
+  margin-left: 803px;
+  float: right;
+}
