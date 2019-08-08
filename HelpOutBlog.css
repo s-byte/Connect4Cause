@@ -1,1 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Century  ;
+}
 
+body {
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://www.kellyservices.us/us/siteassets/united-states---kelly-services/images/career--mgmt-tips/volunteer.jpg);
+  background-size: cover;
+  /* background-position: center; */
+}
+
+.thing{
+  color: #fff;
+}
+
+ul{
+  float:right;
+  list-style-type: none;
+  margin-top: 25px;
+}
+
+header{
+  background-position: center;
+}
+
+ul li{
+display: inline-block;
+}
+
+ul li a{
+  text-decoration: none;
+  color: #fff;
+  padding:7px 40px;
+  border: 1px solid #fff;
+  transition: 0.5s ease;
+  background-color: none;
+}
+
+ul li a:hover{
+  background-color:#fff;
+  color: #000000
+}
+
+ul li a:active{
+  background-color:#fff;
+  color: #000000
+}
+
+.logo img{
+  margin-top: 8px;
+  float: left;
+  width:150px
+}
+
+.card {
+  background-color:white;
+  padding: 20px;
+  margin-top: -680px;
+  float:right;
+}
+
+.ca {
+  background-color:white;
+  padding: 20px;
+  margin-top: -340px;
+  float:right;
+}

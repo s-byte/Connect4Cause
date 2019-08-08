@@ -1,72 +1,197 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <link rel= "stylesheet" href= "HelpOutBlog.css">
+    <script src= "HelpOutBlog.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
-  <link rel= "stylesheet" href= "HelpOutBlog.css">
-  <script src= "HelpOutBlog.js"> </script>
+
+  <header>
+          <div class= "main">
+          <div class="logo">
+          <img src="C:\users\GWC\Desktop\tfac.jpeg">
+          </div>
+          <ul>
+            <li class="active"><a href="file:///C:/Users/GWC/Desktop/page1travel.html">Home</a></li>
+            <li><a href="file:///C:/Users/GWC/Desktop/helpout-ourmission.html">OurMission</a></li>
+            <li><a href="file:///C:/Users/GWC/Desktop/helpout-aboutus.html">AboutUs</a></li>
+            <li><a href="file:///C:/Users/GWC/Desktop/HelpOutBlog.html">Blog</a></li>
+          </ul>
+        </div>
+  </header>
 
   <body bgcolor="#aaaa55">
-    <h1 style="text-align:center;"> Did you HelpOut? Blog about it! </h1>
-      <h3 style="text-align:center;"> exchnage adventures, share expereinces </h3>
+    <h1 class="thing" style="text-align:center;"> Did you HelpOut? Blog about it! </h1>
+      <h3 class="thing" style="text-align:center;"> exchnage adventures, share expereinces </h3>
 
-
-  <div class="container">
-        <form action="action_page.php">
-          <div class="row">
+  <!-- <div class="container"> -->
+        <!-- <form action="action_page.php"> -->
+          <!-- <div class="row">
             <div class="col-25">
-              <label for="fname">Name</label>
+              <label for="fname" >Name</label>
             </div>
             <div class="col-75">
               <input type="text" id="fname" name="firstname" placeholder="Your name..">
-            </div>
-          </div>
-          <div class="row">
+            </div> -->
+
+          <!-- <div class="row">
             <div class="col-25">
             </div>
             <div class="col-75">
           </div>
           <div class="row">
-            <div class="col-25">
-              <label for="country">Country</label>
+            <div class="col-25"> -->
+              <label for="country" class="thing">Country</label>
             </div>
             <div class="col-75">
               <select id="country" name="country">
-                <option value="australia">China</option>
-                <option value="australia">Japan</option>
-                <option value="australia">Phillipines</option>
-                <option value="australia">Africa</option>
-                <option value="australia">Thailand</option>
-                <option value="australia">India</option>
-                <option value="canada">Australia</option>
-                <option value="usa">New Zealand</option>
-                <option value="usa">Europe</option>
-                <option value="usa">South America</option>
-                <option value="usa">Oceania</option>
-                <option value="usa">Middle East</option>
-                <option value="usa">North America</option>
+                <option value="China">China</option>
+                <option value="Japan">Japan</option>
+                <option value="Phillipines">Phillipines</option>
+                <option value="Africa">Africa</option>
+                <option value="Thailand">Thailand</option>
+                <option value="India">India</option>
+                <option value="Australia">Australia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Europe">Europe</option>
+                <option value="South America">South America</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Middle East">Middle East</option>
+                <option value="North America">North America</option>
               </select>
             </div>
-          </div>
+          <!-- /div>
           <div class="row">
             <div class="col-25">
-              <label for="subject">Post</label>
+              <label for="subject" class="thing">Post</label>
             </div>
             <div class="col-75">
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-            </div>
+              <textarea class="info" id="subject" name="subject" placeholder="Write something.." style="height:400px"></textarea>
           </div>
           <div class="row">
             <input type="submit" value="Submit">
           </div>
         </form>
+      </div> -->
+      <p id="result"></p>
+      <p id = "test"></p>
+      <p id = "test2"></p>
+
+
+      <div class="info" class="container">
+           <label for="example" class="thing">
+           </label>
+           <br>
+           <textarea id="example" type="text"
+                  name="Ntext" style="height:200px" placeholder="Write something..."></textarea>
+                  <br>
+           <input id="sent" type="submit"
+                  value="Send">
+       </div>
+         <p id="para" class="thing">
+         </p>
+       </body>
+
+       <script>
+       window.onclick = function(e) //allows the program to run (send button to work so on)
+      {   var id =  e.target.id;
+      if (id === 'sent')
+      { var txtbox = document.getElementById('example');
+        var country = document.getElementById('country');
+        var txt = txtbox.value;
+        var country = country.value;
+        var post = {"text" : txt, "country":country};
+        // $( txtbox ).val('');
+        if (typeof(Storage) !== "undefined") {
+          // alert("posts" in localStorage);
+          if ("posts" in localStorage) {
+            var c = localStorage.getItem("posts");
+            var d = JSON.parse(c);
+            d.push(post);
+            var e = JSON.stringify(d);
+            // alert(e);
+            localStorage.setItem ("posts", e);
+            // alert(localStorage.getItem("posts"));
+          }else{
+            var a = [post];
+            var b = JSON.stringify(a);
+            localStorage.setItem ("posts", b);
+          }
+          // alert(d.length);
+          var i;
+
+         $( "#para" ).empty();
+          for(i=d.length-1; i>0;){
+            // alert("hi");
+              $( "#para" ).append( '<br>'+ d[i].text + '<br>');
+                 $( txtbox ).val('');
+               i=i-1;
+          }
+          // localStorage.clear();
+         // document.getElementById("test2").innerHTML = typeof(Storage); //this was a test
+          //var txtbox = JSON.stringify([{"Country":"","Post": ""}]); //gives a sample json as a string
+          //document.getElementById("test"). = typeof(string); //test to make sure it was actually being read in as a string
+        //  localStorage.setItem("lastname", string); //sets the one item in the array to be the complete json
+          // var list = localStorage.getItem("lastname"); // retrieves the entire string version of the JSON and assigns it to variable list
+          // list = JSON.parse(list); //makes string readable as a JSON format
+
+
+          // ^taking list out of storage, next append list,
+          // list.append(txt)
+
+
+          document.getElementById("result").innerHTML = list.Country;//JSON.parse(list)[0].Desc; //GETS THE STUFF FROM THE JSON and puts it on the page
+        } else {
+          document.getElementById("result").innerHTML = list.Post; //Will alert if the browser doesnt support storage, ie storage is undefined
+        }
+       //clears the textbox after send button is clicked
+        // var a = [];
+        // a.push(txt);
+      }
+      }
+       </script>
+<!--
+       <script>
+       // Check browser support
+
+       if (typeof(Storage) !== "undefined") {
+
+        // document.getElementById("test2").innerHTML = typeof(Storage); //this was a test
+         var string = JSON.stringify([{"Country":"","Post": ""}]); //gives a sample json as a string
+         //document.getElementById("test"). = typeof(string); //test to make sure it was actually being read in as a string
+         localStorage.setItem("lastname", string); //sets the one item in the array to be the complete json
+         var list = localStorage.getItem("lastname"); // retrieves the entire string version of the JSON and assigns it to variable list
+         list = JSON.parse(list); //makes string readable as a JSON format
+         // ^taking list out of storage, next append list,
+         list.append(string)
+
+
+         document.getElementById("result").innerHTML = list.Country;//JSON.parse(list)[0].Desc; //GETS THE STUFF FROM THE JSON and puts it on the page
+       } else {
+         document.getElementById("result").innerHTML = list.Post; //Will alert if the browser doesnt support storage, ie storage is undefined
+       }
+       </script> -->
+
+      <div class="card">
+        <h2>Sophie's Trip to Ecuador</h2>
+        <h5>Title description, August 1, 2019</h5>
+        <div style="height:200px;"><img src="C:\users\GWC\Desktop\0[1].jpg" height="200" width="250"><img></div>
+        <p></p>
       </div>
-
-
-      <!DOCTYPE html>
+      <!-- <div class="ca">
+        <h2>Carol's Volunteer Plans </h2>
+        <h5>Title description, July 29, 2019</h5>
+        <div class="fakeimg" style="height:200px;"><img src="C:\users\GWC\Desktop\dog.jpg" height="200" width="250"><img></div>
+        <p></p> -->
+         <!-- <div class="card">
+          <h2>Neha's Walk to <embed type="video/quicktime" src="#" width="300" height="300">nd Alzheimer's </h2>
+          <h5>Title description, July 29, 2019</h5>
+          <div class="fakeimg" style="height:200px;"><img src="C:\users\GWC\Desktop\unnamed[1].jpg" height="200" width="250"><img></div>
+          <p></p> -->
+        </div>
+      <!-- <!DOCTYPE html>
       <html>
       <head>
-      <!-- Font Awesome Icon Library -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
       .checked {
@@ -76,15 +201,15 @@
       </head>
       <body>
 
-      <h2>Star Rating</h2>
+      <h2 class="thing">Star Rating</h2>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
+      <span class="fa fa-star" class="thing"></span>
       <span class="fa fa-star"></span>
 
       </body>
-      </html>
+      </html> -->
 
 
 
